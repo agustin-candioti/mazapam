@@ -2,11 +2,18 @@ body{
   background-image: url("fondo.jpg");
   z-index: 0;
 }
-
+header{
+  height: 10vh;
+  background-color: rgba(235, 0, 0, 0.5);
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+}
 img.logo{
   margin-left: 150px;
   width: 70%;
   margin-bottom: 40px;
+  margin-top: 160px;
 }
 .container-fluid{
   z-index: 20;
@@ -17,8 +24,12 @@ img.fotos{
   height: 600px;
   margin-bottom: 70px;
   margin-left: 105px;
-  border-radius: 25px;
+  border-radius: 100px;
   border-style: ridge;
-  border-color: rgb(227, 40, 0, 1);
+  border-color: rgb(235, 0, 0);
   border-width: 15px;
 }
+footer{
+  height: 10vw;
+  background-color: red;
+  }
