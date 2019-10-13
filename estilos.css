@@ -3,7 +3,7 @@ body{
   z-index: 0;
 }
 header{
-  height: 10vh;
+  height: 11vh;
   background-color: rgba(235, 0, 0, 0.5);
   width: 100%;
   position: fixed;
@@ -12,29 +12,46 @@ header{
 header nav{
   height: 100%;
   width: 100%;
-  font-size: 40px;
+  font-size: 15px;
   font-weight: bold;
+  text-align: center;
 }
 header nav ul{
-  margin:0px;
+  margin-top:6px;
   padding: 0px;
   height: 100%;
-  width: 100%;
 }
 header nav ul li{
   display: inline-block;
   text-decoration: none;
+  margin-right: 7%;
+  text-align: center;
 }
 header nav ul li a{
   text-decoration: none;
   color: black;
 }
+header nav ul#primer_ul{
+  width: 40%;
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+}
+header nav ul#segundo_ul{
+  width: 40%;
+  display: inline-block;
+  position: absolute;
+  right:30%;
+}
 img.logo{
-  margin-left: 150px;
+  margin-left: 10px;
   width: 30%;
-  margin-bottom: 40px;
-  margin-top: 160px;
+  margin-bottom: 25px;
+  margin-top: 50px;
   z-index: 45;
+}
+div.bd-example{
+  display: none;
 }
 .container-fluid{
   z-index: 20;
@@ -43,45 +60,51 @@ img.logo{
 img.fondo{
   z-index: 40;
 }
+.contenedor_imagen_inicio{
+  position: relative
+}
+ div.subfoto{
+  position: absolute;
+  bottom: 20px;
+  right: 20%;
+  font-size: 20px;
+}
 img.fotos{
   width: 80%;
-  height: 600px;
   margin-bottom: 70px;
-  margin-left: 105px;
+  margin-left: 10px;
 
   border-style: ridge;
   border-color: rgb(235, 0, 0);
-  border-width: 15px;
+  border-width: 5px;
 }
 footer{
-  height: 400px;
+  height: 200px;
   background-color: red;
   }
 footer nav{
-  height: 100%;
-  width: 100%;
-  font-size: 50px;
+  font-size: 20px;
   text-align: center;
   color: white;
-}
-footer nav ul{
-  width: 100%;
-  margin-bottom: 50px;
 }
 footer nav ul li{
   display: inline-block;
   text-decoration: none;
 }
 div.p{
-  width: 70%;
-  border: 10px solid black;
-  margin-left: 150px;
+  border: 3px solid black;
 }
 div p a{
   text-decoration: none;
   color: white;
 }
-/* ESTILOS PESTAÑA DE PRODUCTOS */
+/*
+
+
+ESTILOS PESTAÑA DE PRODUCTOS
+
+
+*/
 
 article{
   height: 500px;
@@ -106,4 +129,45 @@ article.producto div.imagen img#carrito{
   position: absolute;
   right: 0px;
   top: 0px;
+}
+
+/*
+
+RESPONSIVE MEDIA QUERIES
+
+
+*/
+
+@media (min-width:500px) {
+  .contenedor_imagen_inicio{
+    width: 50%;
+  }
+  img.logo{
+    margin-left: 10px;
+    width: 20%;
+    margin-bottom: 25px;
+    margin-top: 50px;
+    z-index: 45;
+  }
+
+@media (min-width:1000px) {
+  div.container-fluid{
+    display: none;
+  }
+  header{
+    height: 7vh;
+  }
+  header nav ul#primer_ul{
+    right: -20px;
+  }
+  img.logo{
+    margin-top: 80px;
+    margin-left: 40%;
+  }
+  div.bd-example{
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 30px;;
+  }
 }
