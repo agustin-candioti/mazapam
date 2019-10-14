@@ -4,7 +4,7 @@ body{
 }
 header{
   height: 11vh;
-  background-color: rgba(235, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   position: fixed;
   z-index: 50;
@@ -15,6 +15,7 @@ header nav{
   font-size: 15px;
   font-weight: bold;
   text-align: center;
+  color: white;
 }
 header nav ul{
   margin-top:6px;
@@ -27,27 +28,24 @@ header nav ul li{
   margin-right: 7%;
   text-align: center;
 }
-header nav ul li a{
-  text-decoration: none;
-  color: black;
-}
-header nav ul#primer_ul{
-  width: 40%;
-  display: inline-block;
-  position: absolute;
-  left: 20px;
+div.hamburguesa{
+  display: none;
 }
 header nav ul#segundo_ul{
-  width: 40%;
+  width: 90%;
   display: inline-block;
   position: absolute;
-  right:30%;
+  left:25%;
+  text-decoration: none;
 }
+header nav ul#segundo_ul a{
+  color: white;
+  }
 img.logo{
-  margin-left: 10px;
   width: 30%;
-  margin-bottom: 25px;
-  margin-top: 50px;
+  margin-left: 65%;
+  margin-bottom: 10px;
+  margin-top: 60px;
   z-index: 45;
 }
 div.bd-example{
@@ -60,44 +58,123 @@ div.bd-example{
 img.fondo{
   z-index: 40;
 }
-.contenedor_imagen_inicio{
-  position: relative
+h5{
+  text-align: center;
 }
- div.subfoto{
-  position: absolute;
-  bottom: 20px;
-  right: 20%;
-  font-size: 20px;
+p.descripcion{
+  width: 50%;
+  margin-left: 27%;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+div.ver_mas{
+  background-color: rgba(235, 0, 0, 0.8);
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 2px;
+}
+div.ver_mas p {
+  text-align: center;
+  font-weight: bold;
 }
 img.fotos{
   width: 80%;
-  margin-bottom: 70px;
-  margin-left: 10px;
-
+  margin-left: 10%;
+  margin-bottom: 20px;
   border-style: ridge;
-  border-color: rgb(235, 0, 0);
+  border-color: rgb(0, 0, 0);
   border-width: 5px;
 }
 footer{
   height: 200px;
-  background-color: red;
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
   }
 footer nav{
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
-  color: white;
+  color: black;
 }
-footer nav ul li{
+div.redes{
+  width: 20%;
   display: inline-block;
-  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+div.redes img{
+  width: 100%;
 }
 div.p{
-  border: 3px solid black;
+  position: absolute;
+  left: 15%;
+  bottom: 50px;
+  width: 70%;
+}
+div p {
+  border-bottom: solid gray 1px;
+}
+div p.p{
+  border-bottom: none;
 }
 div p a{
   text-decoration: none;
-  color: white;
+  color: black;
 }
+
+/*
+
+
+ESTILOS PESTAÑA DE REGISTRO
+
+
+*/
+
+div.container{
+  width: 90%;
+  margin-bottom: 80px;
+}
+div.formularios{
+  width: 90%;
+  height: 50px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin-left: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+div.container form input{
+  position: absolute;
+  bottom: 0px;
+  left: 1%;
+  width: 95%;
+  font-size: 15px;
+  border: none;
+}
+div.formularios label.nombre_formularios{
+  left: 1%;
+  top: 3px;
+  font-size: 10px;
+  font-weight: bolder;
+  position: absolute;
+}
+input#boton_enviar{
+  width: 40%;
+  height: 50px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+footer{
+  margin-top: 10px;
+}
+
+
+
 /*
 
 
@@ -139,35 +216,72 @@ RESPONSIVE MEDIA QUERIES
 */
 
 @media (min-width:500px) {
-  .contenedor_imagen_inicio{
-    width: 50%;
-  }
+  /* HOME */
   img.logo{
-    margin-left: 10px;
     width: 20%;
-    margin-bottom: 25px;
-    margin-top: 50px;
     z-index: 45;
   }
+  div.contenedor_de_fotos{
+    width: 50%;
+  }
+  div.ver_mas{
+    width: 50%;
+    margin-left: 25%;
+  }
+  footer nav div.redes{
+    width: 10%;
+  }
+  /* REGISTRO */
+  div.container{
+    width: 70%;
+    margin-bottom: 80px;
+  }
+  input#boton_enviar{
+    width: 30%;
+    margin-left: 35%;
+  }
 
-@media (min-width:1000px) {
+
+@media (min-width:1024px) {
   div.container-fluid{
     display: none;
-  }
-  header{
-    height: 7vh;
-  }
-  header nav ul#primer_ul{
-    right: -20px;
-  }
-  img.logo{
-    margin-top: 80px;
-    margin-left: 40%;
   }
   div.bd-example{
     display: block;
     width: 70%;
     margin-left: 15%;
     margin-bottom: 30px;;
+  }
+  header nav ul#segundo_ul{
+    left: 40%;
+  }
+  img.logo{
+    margin-top: 80px;
+    margin-left: 40%;
+  }
+  footer nav div.redes{
+    width: 8%;
+  }
+  footer nav div.p{
+    bottom: 30px;
+  }
+}
+
+@media (min-width:1440px) {
+
+  /* HOME */
+  footer nav div.p{
+    bottom: 0px;
+  }
+  div.bd-example{
+    margin-bottom: 70px;
+  }
+  footer nav div.redes{
+    width: 6%;
+    margin-top: 0px;
+  }
+  footer nav div.p{
+    font-size: 25px;
+    bottom: 0px;
   }
 }
