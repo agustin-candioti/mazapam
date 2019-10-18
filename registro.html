@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Users/AdriG/Desktop/Mazapam/mazapam/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Mazapam</title>
   </head>
@@ -19,7 +19,7 @@
           </div>
           <ul id="segundo_ul">
             <a href="registro.html"><li>Registrarse</li></a>
-            <li>Ingresar</li>
+            <a href="login.html"><li>Ingresar</li></a>
           </ul>
       </nav>
     </header>
@@ -54,6 +54,10 @@
       <div class="formularios">
       <label for="contrasenia" class="nombre_formularios">Contraseña</label>
       <input type="password" name="contrasenia-usuario" id="contrasenia">
+      </div>
+      <div class="formularios">
+      <label for="validarContrasenia" class="nombre_formularios">Confirmar contraseña</label>
+      <input type="password" name="validar-contrasenia-usuario" id="validarContrasenia">
       </div>
 
       <input id="boton_enviar" type="submit" name="enviar" value="Enviar">

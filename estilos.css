@@ -55,15 +55,20 @@ div.bd-example{
   z-index: 20;
   width: 100%;
 }
+div.contenedor_de_fotos{
+  margin-bottom: 70px;
+}
 img.fondo{
   z-index: 40;
 }
 h5{
   text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 27px;
 }
 p.descripcion{
   width: 50%;
-  margin-left: 27%;
+  margin-left: 25%;
   margin-bottom: 10px;
   font-size: 11px;
 }
@@ -81,9 +86,7 @@ img.fotos{
   width: 80%;
   margin-left: 10%;
   margin-bottom: 20px;
-  border-style: ridge;
-  border-color: rgb(0, 0, 0);
-  border-width: 5px;
+  box-shadow: 2px 2px 10px #666;
 }
 footer{
   height: 200px;
@@ -105,21 +108,24 @@ div.redes{
 div.redes img{
   width: 100%;
 }
+
 div.p{
+  margin-top: 30px;
+}
+
+footer nav div.preguntas{
   position: absolute;
-  left: 15%;
-  bottom: 50px;
-  width: 70%;
+  bottom: 0px;
+  background-color: black;
+  width: 100%;
+}
+h6{
+  color: white;
+  height: 100%;
+  margin-bottom: 3px;
 }
 div p {
   border-bottom: solid gray 1px;
-}
-div p.p{
-  border-bottom: none;
-}
-div p a{
-  text-decoration: none;
-  color: black;
 }
 
 /*
@@ -159,7 +165,7 @@ div.formularios label.nombre_formularios{
   font-weight: bolder;
   position: absolute;
 }
-input#boton_enviar{
+input#boton_enviar, #boton_ingresar{
   width: 40%;
   height: 50px;
   border: solid gray 1px;
@@ -207,6 +213,19 @@ article.producto div.imagen img#carrito{
   right: 0px;
   top: 0px;
 }
+
+/*
+
+ESTILOS PESTAÑA DE FAQ
+
+*/
+
+h3{
+  text-align: center;
+}
+
+
+
 
 /*
 
