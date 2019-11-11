@@ -1,4 +1,8 @@
+
+
 /* ESTILOS PESTAÑA DE HOME */
+
+
 body{
   z-index: 0;
 }
@@ -35,7 +39,7 @@ header nav ul#segundo_ul{
   width: 90%;
   display: inline-block;
   position: absolute;
-  left:25%;
+  left:30%;
   text-decoration: none;
 }
 header nav ul#segundo_ul a{
@@ -50,6 +54,7 @@ img.logo{
 }
 div.bd-example{
   display: none;
+  box-shadow: 2px 2px 10px #666;
 }
 .container-fluid{
   z-index: 20;
@@ -60,6 +65,13 @@ div.contenedor_de_fotos{
 }
 img.fondo{
   z-index: 40;
+}
+h5#index{
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 27px;
+  width: 90%;
+  margin-left: 5%;
 }
 h5{
   text-align: center;
@@ -88,8 +100,9 @@ img.fotos{
   margin-bottom: 20px;
   box-shadow: 2px 2px 10px #666;
 }
+
 footer{
-  height: 200px;
+  height: 100px;
   background-color: rgba(255, 255, 255, 1);
   position: relative;
   }
@@ -98,19 +111,26 @@ footer nav{
   text-align: center;
   color: black;
 }
-div.redes{
+
+div#facebook{
+  position: absolute;
+  left: 25%;
+  bottom: 30px;
   width: 20%;
   display: inline-block;
-  margin-top: 10px;
-  margin-right: 20px;
-  margin-left: 20px;
 }
-div.redes img{
+div#instagram{
+  position: absolute;
+  left: 55%;
+  bottom: 30px;
+  width: 20%;
+  display: inline-block;
+}
+div#facebook img{
   width: 100%;
 }
-
-div.p{
-  margin-top: 30px;
+div#instagram img{
+  width: 100%;
 }
 
 footer nav div.preguntas{
@@ -147,7 +167,7 @@ div.formularios{
   border-radius: 5px;
   margin-left: 5%;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   position: relative;
 }
 div.container form input{
@@ -165,6 +185,18 @@ div.formularios label.nombre_formularios{
   font-weight: bolder;
   position: absolute;
 }
+
+div.foto{
+  width: 90%;
+  height: 70px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin-left: 5%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
 input#boton_enviar, #boton_ingresar{
   width: 40%;
   height: 50px;
@@ -178,6 +210,48 @@ input#boton_enviar, #boton_ingresar{
 footer{
   margin-top: 10px;
 }
+
+/*
+
+
+ESTILOS PESTAÑA DE LOGIN
+
+
+*/
+div.container form{
+  margin-top: 30px;
+}
+
+div input#recordarme{
+  position:relative;
+  width: 25px;
+}
+div.recordarme{
+  position:relative;
+  width:90%;
+  margin-left:5%;
+}
+
+span#recordarme{
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top:2px;
+  margin-left:1%;
+}
+div#olvide{
+  position: relative;
+  width: 90%;
+  height: 20px;
+  margin-left: 4%;
+}
+span#olvide{
+  position: absolute;
+  left: 1%; 
+  top: 30px;
+  font-size: 13px;
+}
+
 
 
 
@@ -236,9 +310,14 @@ RESPONSIVE MEDIA QUERIES
 
 @media (min-width:500px) {
   /* HOME */
+
+  header nav ul#segundo_ul {
+    left: 40%;
+  }
   img.logo{
     width: 20%;
     z-index: 45;
+    margin-left: 75%;
   }
   div.contenedor_de_fotos{
     width: 50%;
@@ -247,8 +326,18 @@ RESPONSIVE MEDIA QUERIES
     width: 50%;
     margin-left: 25%;
   }
-  footer nav div.redes{
-    width: 10%;
+  footer nav div#facebook{
+    left: 33%;
+  }
+  footer nav div#instagram{
+    left: 47%;
+  }
+  footer nav div#facebook img{
+    width: 50%;
+   
+  }
+  footer nav div#instagram img{
+    width: 50%;
   }
   /* REGISTRO */
   div.container{
@@ -276,13 +365,31 @@ RESPONSIVE MEDIA QUERIES
   }
   img.logo{
     margin-top: 80px;
-    margin-left: 40%;
+    margin-left: 73%;
   }
   footer nav div.redes{
     width: 8%;
   }
-  footer nav div.p{
-    bottom: 30px;
+  footer nav div#facebook{
+    left: 35%;
+  }
+  footer nav div#instagram{
+    left: 45%;
+  }
+  footer nav div#facebook img{
+    width: 30%;
+   
+  }
+  footer nav div#instagram img{
+    width: 30%;
+  }
+  input#boton_enviar{
+    width: 20%;
+    margin-left: 40%;
+  }
+  input#boton_ingresar{
+    width: 20%;
+    margin-left: 40%;
   }
 }
 
