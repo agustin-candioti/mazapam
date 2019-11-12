@@ -10,7 +10,7 @@
         </div>
         
         <div class="preguntas">
-          <a href="FAQ.html"><h6>Preguntas Frecuentes</h6></a>
+          <a href="FAQ.php"><h6>Preguntas Frecuentes</h6></a>
         </div>
       </nav>
 

@@ -18,8 +18,8 @@
           </ul>
           </div>
           <ul id="segundo_ul">
-            <a href="registro.html"><li>Registrarse</li></a>
-            <a href="login.html"><li>Ingresar</li></a>
+            <a href="registro.php"><li>Registrarse</li></a>
+            <a href="login.php"><li>Ingresar</li></a>
           </ul>
       </nav>
     </header>

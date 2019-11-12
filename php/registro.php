@@ -1,5 +1,6 @@
-
 <?php
+session_start();
+
 $nombre = "Nombre";
 $errorNombre = "";
 $apellido = "Apellido";
@@ -65,7 +66,17 @@ if($_POST){
       }
     }
 
-    $usuarios_registrados = [
+    //Trae el archivo .json
+
+    $usuariosJson = file_get_contents("../bdd/json/usuarios.json");
+
+    //Convierte el .json en array
+
+    $usuariosPHP = json_decode($usuariosJson, true);
+
+    //Crea un nuevo usuario con lo que llega por POST
+
+    $usuario_registrado = [
      "nombre_del_usuario" => $_POST["nombre-usuario"],
      "apellido_usuario" => $_POST["apellido-usuario"],
      "email_usuario" => $_POST["email-usuario"],
@@ -73,23 +84,26 @@ if($_POST){
      "contraseña_usuario" => $_POST["contrasenia-usuario"]
     ];
 
-    $json = json_encode($usuarios_registrados);
+    //Suma ese nuevo usuario al array
 
-    file_put_contents("../bdd/json/usuarios.json", $json);
+    $usuariosPHP[] = $usuario_registrado;
+
+    //Toma ese array y lo convierte en un .json
+
+    $usuariosJson = json_encode($usuariosPHP);
+
+    //Agrega los nuevos datos al archivo .json original
+
+    file_put_contents("../bdd/json/usuarios.json", $usuariosJson);
 
     $ext = pathinfo($_FILES["foto-usuario"]["name"], PATHINFO_EXTENSION);
 
     move_uploaded_file($_FILES["foto-usuario"]["tmp-name"], "../bdd/images/foto".$ext);
+
+    $_SESSION["email_usuario"] = $_POST["email-usuario"];
+    header("Location:login.php");
   }
-
-
-  
-
-
-
-
-
-?>
+  ?>
 
 <?php include("../layout/header.php"); ?>
 
