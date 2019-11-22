@@ -24,7 +24,7 @@
       </nav>
     </header>
     <div class="logo">
-      <img src="../images/logo.png" alt="" class="logo">
+      <a href="index.php"><img src="../images/logo.png" alt="" class="logo"></a>
     </div>
     <hr>
     <body>

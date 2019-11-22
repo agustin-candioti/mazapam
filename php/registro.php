@@ -19,8 +19,7 @@ $per_nombre = "";
 $per_apellido = "";
 $per_mail = "";
 $per_usuario = "";
-
-
+$errores = false;
 
 if($_POST){
 
@@ -28,45 +27,57 @@ if($_POST){
        $errorNombre = "Por favor, ingrese un nombre válido";
        $nombre = "";
        $per_nombre = $_POST["nombre-usuario"];
+       $errores = true;
     }
      if(strlen($_POST["apellido-usuario"])  < 3){
       $errorApellido = "Por favor, ingrese un apellido válido";
       $apellido = "";
       $per_apellido = $_POST["apellido-usuario"];
+      $errores = true;
   }
     if(!filter_var($_POST["email-usuario"], FILTER_VALIDATE_EMAIL)){
       $errorEmail = "Por favor, ingrese un email válido";
       $email = "";
       $per_email = $_POST["email-usuario"];
+      $errores = true;
   }
     if(strlen($_POST["usuario-usuario"])  < 6){
       $errorUsuario = "Por favor, elija un usuario más largo";
       $usuario = "";
       $per_usuario = $_POST["usuario-usuario"];
+      $errores = true;
   }
     if(!preg_match('/^[a-zA-Z]+[a-zA-Z0-9._]+$/', $_POST["contrasenia-usuario"])) {
       $errorContraseña = "La contraseña debe contener al menos un número y una letra";
       $contraseña = "";
+      $errores = true;
     }
     
     if(strlen($_POST["contrasenia-usuario"]) < 6){
       $errorContraseña = "La contraseña debe contener al menos 6 caracteres";
       $contraseña = "";
+      $errores = true;
       } 
      
       if($_POST["validar-contrasenia"] != $_POST["contrasenia-usuario"]){
       $errorConfirmar = "Las contraseñas no coinciden";
       $confirmarContraseña = "";
+      $errores = true;
     }
 
     if($_FILES){
       $ext = pathinfo($_FILES["foto-usuario"]["name"], PATHINFO_EXTENSION);
       if($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
         $errorFoto = "La imagen debe ser de tipo '.jpg', '.jpeg' o 'png'";
+        //$errores = true;
       }
     }
 
+   if(!$errores){
+    
     //Trae el archivo .json
+
+    var_dump($_POST["email_usuario"]);
 
     $usuariosJson = file_get_contents("../bdd/json/usuarios.json");
 
@@ -81,7 +92,7 @@ if($_POST){
      "apellido_usuario" => $_POST["apellido-usuario"],
      "email_usuario" => $_POST["email-usuario"],
      "nombre_usuario" => $_POST["usuario-usuario"],
-     "contraseña_usuario" => $_POST["contrasenia-usuario"]
+     "contraseña_usuario" => password_hash($_POST["contrasenia-usuario"], PASSWORD_DEFAULT)
     ];
 
     //Suma ese nuevo usuario al array
@@ -101,8 +112,10 @@ if($_POST){
     move_uploaded_file($_FILES["foto-usuario"]["tmp-name"], "../bdd/images/foto".$ext);
 
     $_SESSION["email_usuario"] = $_POST["email-usuario"];
+
     header("Location:login.php");
-  }
+   }
+}
   ?>
 
 <?php include("../layout/header.php"); ?>

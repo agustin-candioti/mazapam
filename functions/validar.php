@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $usuariosJson = file_get_contents("../bdd/json/usuarios.json");
 $usuariosPHP = json_decode($usuariosJson, true);
@@ -14,7 +13,6 @@ foreach($usuariosPHP as $usuario){
         break;
     }else{
         $perUsuario = $_POST["nombre_usuario"];
-        var_dump($perUsuario);
         header("Location:../php/login.php");
         break;
     }

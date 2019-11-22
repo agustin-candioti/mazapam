@@ -15,5 +15,3 @@
       </nav>
 
     </footer>
-  </body>
-</html>
